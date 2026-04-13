@@ -782,33 +782,17 @@ main {
 }
 
 @media (max-width: 1000px) {
-    .nav-inner {
-        flex-wrap: wrap;
-    }
-
-    .nav-logo-wrap,
-    .nav-menu,
-    .nav-icon-group {
-        width: 100%;
-    }
-
     .nav-logo-wrap {
-        justify-content: center;
-        padding: 14px 20px;
-    }
-
-    .nav-menu {
-        flex-wrap: wrap;
-        height: auto;
+        min-width: 220px;
+        padding: 0 18px;
     }
 
     .nav-menu li {
-        min-width: 33.33%;
-        height: 70px;
+        min-width: 120px;
     }
 
-    .nav-icon-group {
-        justify-content: center;
+    .nav-icon-group li {
+        width: 70px;
     }
 
     .services-intro,
@@ -929,5 +913,46 @@ main {
 
     .home-preview-card h3 {
         font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .top-nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .nav-inner {
+        min-height: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+
+    .nav-logo-wrap {
+        width: auto;
+        min-width: 0;
+        padding: 10px 16px;
+        justify-content: center;
+    }
+
+    .nav-menu,
+    .nav-icon-group {
+        display: none;
+    }
+
+    .nav-logo-swap {
+        width: 160px;
+        height: 48px;
+    }
+
+    .logo-default img {
+        height: 48px;
+    }
+
+    .logo-hover-text {
+        font-size: 1.4rem;
     }
 }
