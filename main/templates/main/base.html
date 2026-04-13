@@ -10,6 +10,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
+
+<script>
+    function handleMobileNav() {
+        const nav = document.querySelector('.top-nav');
+        if (!nav) return;
+
+        if (window.innerWidth <= 700 && window.scrollY > 20) {
+            nav.classList.add('mobile-scrolled');
+        } else {
+            nav.classList.remove('mobile-scrolled');
+        }
+    }
+
+    window.addEventListener('scroll', handleMobileNav);
+    window.addEventListener('resize', handleMobileNav);
+    window.addEventListener('load', handleMobileNav);
+</script>
+</body>
+</html>
+
 <body class="page-{{ page_name|default:'default' }}">
 
 <nav class="top-nav">
