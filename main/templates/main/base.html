@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Jeff's Alternative Auto{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-{{ page_name|default:'default' }}">
+
+<nav class="top-nav">
+    <div class="nav-inner">
+        <div class="nav-logo-wrap">
+            <a href="{% url 'home' %}" class="nav-logo nav-logo-swap" aria-label="Go to home page">
+                <span class="logo-default">
+                    <img src="{% static 'main/images/logo.png' %}" alt="Jeff's Alternative Auto Logo">
+                </span>
+                <span class="logo-hover-text">Home</span>
+            </a>
+        </div>
+
+        <ul class="nav-menu">
+            <li><a href="{% url 'about' %}" class="{% if page_name == 'about' %}active{% endif %}">About</a></li>
+            <li><a href="{% url 'services' %}" class="{% if page_name == 'services' %}active{% endif %}">Services</a></li>
+            <li><a href="{% url 'contact' %}" class="{% if page_name == 'contact' %}active{% endif %}">Contact</a></li>
+        </ul>
+
+        <ul class="nav-icon-group">
+            <li>
+                <a href="tel:9205944000" aria-label="Call Jeff's Alternative Auto">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'contact' %}" aria-label="Contact Jeff's Alternative Auto">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.google.com/maps/search/?api=1&query=4905+County+Rd+S+Oshkosh+WI+54904" target="_blank" rel="noopener noreferrer" aria-label="Location">
+                    <i class="fa-solid fa-location-dot"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+    <div class="footer-main">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Visit Us</h3>
+                <div class="footer-line"></div>
+                <p>
+                    4905 County Rd. S<br>
+                    Oshkosh, WI 54904
+                </p>
+                <a href="https://www.google.com/maps/search/?api=1&query=4905+County+Rd+S+Oshkosh+WI+54904"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="footer-btn">
+                    Get Directions
+                </a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <div class="footer-line"></div>
+                <p>
+                    Need to schedule service or ask a question?<br>
+                    We’re here to help.
+                </p>
+                <a href="{% url 'contact' %}" class="footer-btn">Contact Page</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Business Hours</h3>
+                <div class="footer-line"></div>
+
+                <div class="hours-row">
+                    <span>Mon - Fri</span>
+                    <span>8:00 am - 5:00 pm</span>
+                </div>
+
+                <div class="hours-row">
+                    <span>Sat - Sun</span>
+                    <span>Closed</span>
+                </div>
+
+                <p class="hours-note">
+                    Honest repairs. Reliable service. Local care you can count on.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Jeff's Alternative Auto. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

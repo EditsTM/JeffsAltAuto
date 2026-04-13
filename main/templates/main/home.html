@@ -1,0 +1,61 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Home | Jeff's Alternative Auto{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="hero-overlay">
+        <div class="hero-content">
+            <div class="hero-eyebrow">Professional Auto Care</div>
+
+            <h1 class="hero-title">Jeff's Alternative Auto</h1>
+
+            <div class="hero-title-accent"></div>
+
+            <p class="hero-text">
+                Honest automotive repair and maintenance in Oshkosh, Wisconsin.
+                From oil changes and brake work to diagnostics and major repairs,
+                we keep your vehicle running the way it should.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="{% url 'services' %}" class="hero-btn hero-btn-primary">View Services</a>
+                <a href="{% url 'contact' %}" class="hero-btn hero-btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="home-preview-section">
+    <div class="home-preview-shell">
+        <div class="home-preview-header">
+            <div class="services-eyebrow">Why Choose Us</div>
+            <h2>Reliable Service You Can Count On</h2>
+            <p>
+                We focus on quality repairs, clear communication, and dependable service
+                for every customer who walks through our doors.
+            </p>
+        </div>
+
+        <div class="home-preview-grid">
+            <article class="home-preview-card">
+                <div class="service-icon"><i class="fa-solid fa-wrench"></i></div>
+                <h3>Quality Repairs</h3>
+                <p>We handle everything from routine maintenance to more advanced repair work with care and precision.</p>
+            </article>
+
+            <article class="home-preview-card">
+                <div class="service-icon"><i class="fa-solid fa-car"></i></div>
+                <h3>Trusted Local Shop</h3>
+                <p>Proudly serving the Oshkosh area with honest recommendations and dependable automotive service.</p>
+            </article>
+
+            <article class="home-preview-card">
+                <div class="service-icon"><i class="fa-solid fa-phone"></i></div>
+                <h3>Easy to Reach</h3>
+                <p>Need to schedule service or ask a question? Give us a call or use the contact page anytime.</p>
+            </article>
+        </div>
+    </div>
+</section>
+{% endblock %}
